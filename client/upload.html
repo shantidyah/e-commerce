@@ -43,7 +43,7 @@
                     console.log("ini form data",formData);
                     var self = this
                     let token = localStorage.getItem('token')
-                    axios.post('http://localhost:3000/upload',formData)
+                    axios.post('https://e-server.shantidyah.club/upload',formData)
                     .then(result=>{
                         console.log(result);
                         console.log("berhasil")

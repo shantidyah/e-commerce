@@ -43,17 +43,20 @@ var app = new Vue({
       this.islogin = true
     }
     this.products()
+    console.log('disini sih jalan')
   },
   methods:{
     products : function(){
-      axios.get('http://localhost:3000/')
+      console.log('harusnya masuk sini dong')
+      axios.get('https://e-server.shantidyah.club/')
       .then(result=>{
-        // console.log(result);
+        console.log(result);
         
         this.items=result.data
       })
       .catch(err=>{
-
+        console.log(err);
+        
       })
     },
     addcart : function(item){
@@ -112,13 +115,13 @@ var app = new Vue({
         // console.log("ini form data",formData);
         var self = this
         // let token = localStorage.getItem('token')
-        axios.post('http://localhost:3000/upload',formData)
+        axios.post('https://e-server.shantidyah.club/upload',formData)
         .then(result=>{
             // console.log(result);
             console.log("berhasil")
             axios({
                 method: 'post',
-                url: 'http://localhost:3000/addPro',
+                url: 'https://e-server.shantidyah.club/addPro',
                 data: {
                     name:self.name,
                     url:result.data.link,
@@ -157,7 +160,7 @@ var app = new Vue({
       var self = this
       axios({
         method: 'post',
-        url: 'http://localhost:3000/users/login',
+        url: 'https://e-server.shantidyah.club/users/login',
         data: {
           email:param.email,
           password:param.password
@@ -227,7 +230,7 @@ var app = new Vue({
     register : function(customer){
       axios({
         method: 'post',
-        url: 'http://localhost:3000/customers',
+        url: 'https://e-server.shantidyah.club/customers',
         data: {
           fname:customer.fname,
           lname:customer.lname,

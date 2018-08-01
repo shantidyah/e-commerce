@@ -26,7 +26,7 @@ Vue.component('modal-login', {
               email:
               <input type="text" class="form-control" id="usr" name="email" v-model="email">
               password:
-              <input type="password" class="form-control" id="pass" name="password" v-model="password">
+              <input type="password" class="form-control"  name="password" v-model="password">
               </div>
               <h5 style='color:red'>{{warning}}</h5>
               <div class="modal-footer">

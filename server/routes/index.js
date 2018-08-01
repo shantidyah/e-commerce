@@ -10,12 +10,11 @@ const Product = require('../models/products.js')
 router.get('/', (req, res) => {
   Product.find({})
   .then(products=>{
-    // console.log(products);
+    console.log(products);
     res.json(products)
   })
   .catch(err=>{
     console.log(err);
-    
   })
 
 })

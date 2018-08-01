@@ -35,17 +35,17 @@ Vue.component('modal-register', {
               </div>
               <div class="modal-body">
               firstname:
-              <input type="text" class="form-control" id="usr" name="fname" v-model="fname">
+              <input type="text" class="form-control" name="fname" v-model="fname">
               lastname:
-              <input type="text" class="form-control" id="usr" name="lname" v-model="lname">
+              <input type="text" class="form-control" name="lname" v-model="lname">
               email:
-              <input type="text" class="form-control" id="usr" name="email" v-model="email">
+              <input type="text" class="form-control" name="email" v-model="email">
               address:
-              <input type="text" class="form-control" id="usr" name="address" v-model="address">
+              <input type="text" class="form-control" name="address" v-model="address">
               city:
-              <input type="text" class="form-control" id="usr" name="city" v-model="city">
+              <input type="text" class="form-control" name="city" v-model="city">
               password:
-              <input type="password" class="form-control" id="pass" name="password" v-model="password">
+              <input type="password" class="form-control" name="password" v-model="password">
               </div>
               <h5 style='color:red'>{{warning}}</h5>
               <div class="modal-footer">
