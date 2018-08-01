@@ -228,27 +228,32 @@ var app = new Vue({
       }
     },
     register : function(customer){
-      axios({
-        method: 'post',
-        url: 'https://e-server.shantidyah.club/customers',
-        data: {
-          fname:customer.fname,
-          lname:customer.lname,
-          email:customer.email,
-          address:customer.email,
-          city:customer.city,
-          password:customer.password
-        }
-      })
-      .then(cust=>{
-        console.log(cust);
-        swal("Success!", "", "success");
-        // window.location = '/'
-      })
-      .catch(err=>{
-        console.log(err);
-        
-      })
+      if(customer.email.length>0 && customer.password.length>0){
+        axios({
+          method: 'post',
+          url: 'https://e-server.shantidyah.club/customers',
+          data: {
+            fname:customer.fname,
+            lname:customer.lname,
+            email:customer.email,
+            address:customer.email,
+            city:customer.city,
+            password:customer.password
+          }
+        })
+        .then(cust=>{
+          console.log(cust);
+          swal("Success!", "", "success");
+          // window.location = '/'
+        })
+        .catch(err=>{
+          console.log(err);
+          
+        })
+      }
+      else{
+        swal("Failed!", "you must complete the form registers", "warning");
+      }
     }
   }
 })
